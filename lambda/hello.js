@@ -3,7 +3,7 @@ exports.handler = async function(event) {
     return {
       statusCode: 200,
       headers: { "Content-Type": "text/plain" },
-      body: `Thank you my friend! Lucas dutra is Pika!\n`
+      body: `Hello world!\n This is a lambda made with AWS CDK`
     };
   };
   

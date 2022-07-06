@@ -1,6 +1,7 @@
 import * as cdk from '@aws-cdk/core';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as apigw from '@aws-cdk/aws-apigateway'
+import * as cloudtrail from '@aws-cdk/aws-cloudtrail'
 import { HitCounter } from './hitcounter';
 
 export class CdkWorkshopStack extends cdk.Stack {
@@ -22,5 +23,7 @@ export class CdkWorkshopStack extends cdk.Stack {
     new apigw.LambdaRestApi(this, 'Endpoint', {
       handler: helloWithCounter.handler
     });
+
+    new cloudtrail.Trail(this, 'MyTrail');
   }
 }
